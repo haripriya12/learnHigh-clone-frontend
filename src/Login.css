@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #fff;
+}
+.lcontainer{
+    margin: 7% 10% 5% 10%;
+}
+.logcontainer3{
+    margin: auto;
+    text-align: center;
+}
+.data1 {
+    margin-bottom: 8%;
+}
+textarea[type="text1"]::placeholder{
+    text-align: left;
+    font-size: 28px;
+    font-style: inherit;
+}
+.lmail{
+    border-radius:2px;
+    height: 6%;
+}
+  input[type=logintext], select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[id=userlogin] {
+    width: 25%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-content: center;
+  }
+  input[id=userlogin]:hover {
+    background-color: #45a049;
+  }
+  .Noaccount {
+      display: flex;
+      flex-direction: row;
+      font-size: 20px;
+      margin-left: 35%;
+  }
+  
+  
+@media not screen and (max-width: 500px) {
+    .lcontainer {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+    .icons{
+        margin-left: 30%;
+    }
+    .nav-link  {
+        text-decoration: none;
+        color: black;
+    }
+}

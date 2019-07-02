@@ -1,0 +1,143 @@
+@media screen and (min-width:800px) {
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #fff;
+}
+.postcontainer {
+    margin: 8% 7% 8% 7%;
+}
+.postline1{ 
+    padding-left: 18%;
+    padding-right: 18%;
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-self: center;
+}
+.postname{
+    display: flex;
+    align-items: center; 
+}
+.postname>a{
+    color: rgb(23, 24, 24);
+    text-decoration: none;
+    font-size: 20px;
+}
+.posticons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 2;
+}
+.posticons>a{
+    color: rgb(23, 24, 24);
+    text-decoration: none;
+}
+.postcontainer2{
+    padding: 5% 13% 5% 13%;
+}
+textarea[typep=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  input[id=submitreplypost] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-content: center;
+  }
+  input[id=submitreplypost]:hover {
+    background-color: #45a049;
+  }
+}
+@media screen and (max-width:800px) {
+    body{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        background: #fff;
+    }
+    .postcontainer {
+        margin: 8% 7% 8% 7%;
+    }
+    .postline1{
+        padding-left: 7%;
+        padding-right: 7%;
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+    }
+    .postname{
+        display: flex;
+        flex: 2%;
+    }
+    .postname>a{
+        color: rgb(23, 24, 24);
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .posticons>a{
+        color: rgb(23, 24, 24);
+        text-decoration: none;
+    }
+    textarea[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[id=submitreplypost] {
+        width: 50%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        align-content: center;
+      }
+      input[id=submitreplypost]:hover {
+        background-color: #45a049;
+      }
+    }

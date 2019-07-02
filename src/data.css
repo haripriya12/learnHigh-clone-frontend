@@ -1,0 +1,205 @@
+@media screen and (min-width:800px) {
+    body{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        background: #fff;
+    }
+    .dcontainer{
+        width: auto;
+        margin: auto;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 7%;
+        margin-bottom: 10%;
+    } 
+    .dline1{
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        font-size: 15px; 
+    }
+    .dline2{
+        font-weight: bold;
+        letter-spacing: -0.05em; 
+        font-size: 10px;
+        color: rgb(105, 103, 103); 
+    }
+    .textbox{
+        height: 50%;
+        width: 80%;
+    }
+    .dline3{
+        font-weight: bold;
+        letter-spacing: -0.05em; 
+        color: rgb(105, 103, 103); 
+    }
+    .dprofile{
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+    .dimagestyle{
+        border-radius: 50% 50%;
+    }
+    .Dimg{
+        width: 65px;
+        height: 65px; 
+        flex: 1;
+    }
+    .dpname{
+        padding-right: 82%;
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        font-size: 15px; 
+        color: rgb(46, 44, 44); 
+    }
+    .dmsg{
+        font-weight: initial;
+        letter-spacing: -0.05em;
+        font-size: 14px; 
+        color: rgb(37, 37, 37); 
+    }
+    .dreply{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .dclaps{
+        display: flex;
+        flex: 4;
+    }
+    .dresponse{
+        font-size: 13px; 
+        color: rgb(80, 77, 77); 
+        font-weight: initial;
+    }
+    .dhigh{
+        color: rgb(50, 148, 228)
+    }
+    .dcard1 {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 114%;
+        height: 40%;
+    }
+    .dcard2 {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 114%;
+        height: 40%;
+    }
+    textarea[type="text"]::placeholder{
+        text-align: left;
+        font-size: 23px;
+        font-style: inherit;
+        cursor: pointer;
+        align-content: center;
+        padding: 14px 20px;
+        margin: 8px 0;
+    }
+    input[id="submitreplycom"] {
+        width: 20%;
+        border: 1px solid rgb(124, 122, 122);
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        align-content: center;
+      }
+      input[id=submitreplycom]:hover {
+        background-color: #4bb451;
+        border: 1px solid #4bb451;;
+      }
+    }
+    
+    @media screen and (max-width:800px){
+        body{
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background: #fff;
+        }
+        .dcontainer{
+            width: auto;
+            margin: auto;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 7%;
+            margin-bottom: 10%;
+        } 
+        .dline1{
+            font-weight: bold;
+            letter-spacing: -0.05em;
+            font-size: 15px; 
+        }
+        .dline2{
+            font-weight: bold;
+            letter-spacing: -0.05em; 
+            font-size: 10px;
+            color: rgb(105, 103, 103); 
+        }
+        .dline3{
+            font-weight: bold;
+            letter-spacing: -0.05em; 
+            color: rgb(105, 103, 103); 
+        }
+        .dprofile{
+            /* margin-top: 6%;
+            margin-bottom: 3%; */
+            display: flex;
+            flex-direction: row;
+        }
+        img{
+            /* border-radius: 50%;
+            height: 45px;
+            border: 2px solid rgb(35, 36, 34);
+            padding: 10px;  */
+            width: 65px;
+            height: 65px; 
+        }
+        .dpname{
+            font-weight: bold;
+            letter-spacing: -0.05em;
+            font-size: 15px; 
+            color: rgb(46, 44, 44); 
+        }
+        .dmsg{
+            font-weight: initial;
+            letter-spacing: -0.05em;
+            font-size: 14px; 
+            color: rgb(37, 37, 37); 
+        }
+        .dreply{
+            display: flex;
+            flex-direction: row;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+        .dclaps{
+            display: flex;
+            flex: 4;
+        }
+        .dresponse{
+            font-size: 13px; 
+            color: rgb(80, 77, 77); 
+            font-weight: initial;
+        }
+        .dhigh{
+            color: rgb(50, 148, 228)
+        }
+        .dcard1 {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            height: 50%;
+        }
+        .dcard2 {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            height: 50%;
+        }
+    }

@@ -1,0 +1,229 @@
+@media screen and (min-width:800px) {
+    body{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        background: #fff;
+    }
+    .pcontainer {
+        margin: 2% 10% 2% 10%;
+    }
+    .pfirst{
+        width: auto;
+        margin: auto;
+        padding-bottom: 2%;
+    }
+    .picon{
+        height: 40%;
+        width: 40%;
+    }
+    .pname{
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-family: bold;
+    }
+    .pline2{
+        max-width: 800px;
+       padding-left: 9%;
+       padding-right: 9%;
+    }
+    .psecond{
+        max-width: 800px;
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+    .pb1{
+        font-size: 10px;
+    }
+    .pb2{
+        color: rgb(95, 92, 92);
+        letter-spacing: -0.0001em;
+        font-size: 20px;
+    }
+    .profilepage{
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+    .img {
+        flex: 1;
+    }
+    .dp{
+        display: flex;
+        flex-direction: column;
+    }
+    img{
+        width: 65px;
+        height: 65px;  
+    }
+    .pagename {
+        padding-left: 2%;
+        font-style: oblique;
+        font-stretch: expanded;
+    }
+    .ppname:hover {
+        text-decoration-line: underline;
+    }
+    .pthird{
+        max-width: 800px;
+        padding-left: 9%;
+        padding-right: 9%;
+        font-style: normal;
+        font-stretch: expanded;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: -0.0001em;
+        font-size: 20px;
+        line-height: 200%;
+    }
+    div.p{
+        color: rgb(41, 40, 40);
+        letter-spacing: -0.0001em;
+        font-family: Gill Sans, sans-serif;
+        font-stretch: ultra-expanded;
+    }
+    .pimagestyle{
+        border-radius: 50% 50%;
+    }
+    .viewRes{
+        margin-top: 5%;
+        max-width: 800px;
+        padding-left: 9%;
+        padding-right: 9%;
+        font-style: normal;
+        font-stretch: expanded;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: -0.0001em;
+        font-size: 20px;
+    }
+    input[id=submitreply] {
+        width: 100%;
+        border: 1px solid rgb(60, 61, 60);
+        color: black;
+        font-size: 20px;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border-width: 50%;
+        border-radius: 5px;
+        cursor: pointer;
+        align-content: center;
+      }
+      input[id=submitreply]:hover {
+        border: 2px solid rgb(218, 224, 218);
+      }
+    }
+    
+    @media screen and (max-width:800px) {
+        body{
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background: #fff;
+        }
+        .pcontainer {
+            margin: 2% 6% 2% 6%;
+        }
+        .pfirst{
+            width: auto;
+            margin: auto;
+            padding-bottom: 2%;
+        }
+        .picon{
+            height: 30%;
+            width: 30%;
+        }
+        .pname{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-family: bold;
+        }
+        .pline2{
+            max-width: 800px;
+            font-size: 84%;
+           padding-left: 9%;
+           padding-right: 9%;
+        }
+        .psecond{
+            max-width: 800px;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        .pb1{
+            font-size: 10px;
+            padding-top: 10px; 
+        }
+        .pb2{
+            color: rgb(95, 92, 92);
+            letter-spacing: -0.0001em;
+            font-size: 20px;
+        }
+        .profilepage{
+            display: flex;
+            flex-direction: row;
+            align-items: center; 
+            flex-wrap: wrap;
+        }
+        .dp{
+            display: flex;
+            flex-direction: column;
+        }
+        img{
+            width: 65px;
+            height: 65px;  
+        }
+        .pagename {
+            padding-left: 2%;
+            font-style: oblique;
+            font-stretch: expanded;
+        }
+        .ppname:hover {
+            text-decoration-line: underline;
+        }
+        .pthird{
+            max-width: 800px;
+            padding-left: 9%;
+            padding-right: 9%;
+            font-style: normal;
+            font-stretch: expanded;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: -0.0001em;
+            font-size: 15px;
+            line-height: 200%;
+        }
+        div.p{
+            color: rgb(41, 40, 40);
+            letter-spacing: -0.0001em;
+            font-size: 15px;
+            line-height: 200%;
+        }
+        .pthird-first-letter{
+            font-size: 35px;
+            color: #fff;
+            background-color: black;
+            border-radius: 50%;
+            width: 250px;
+            height: 160px;
+            padding: 0 20px;
+        }
+        .pimagestyle{
+            border-radius: 50% 50%;
+        }
+        .viewRes{
+            margin-top: 5%;
+        }
+        input[id=submitreply] {
+            width: 90%;
+            border: 1px solid rgb(60, 61, 60);
+            color: black;
+            font-size: 20px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border-width: 50%;
+            border-radius: 5px;
+            cursor: pointer;
+            align-content: center;
+          }
+          input[id=submitreply]:hover {
+            border: 2px solid rgb(218, 224, 218);
+          }
+    }
