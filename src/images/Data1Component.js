@@ -8,85 +8,80 @@ class DataComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: this.props.post.location.state.p,
+            //id: this.props.post.location.state.p,
+            //commentdata: '',
+            // redirect: false,
+            // authorName: this.props.post.location.state.p,
             data: [{
-                commentBy: "...",
-                commentData: "...",
-                createdAt: "...",
-                user: {
-                    email: "..."
-                }
-            }]
+                commentedby: "...",
+                commentdata: "...",
+                createdAt: "..."
+            }] 
         };
+        console.log('cccc', this.state.commentdata)
+        this.handleCommentdataChange = this.handleCommentdataChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleCommentdataChange = e => {
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
-    };
+    handleCommentdataChange(event) {
+        this.setState({ commentdata: event.target.value })
+    }
 
-
-    handleSubmit = e =>{
-        e.preventDefault();
-        var form = e.target;
-        // this.data.append(this.state.comment)
-        const { commentData, commentBy } = this.state;
-        const comment = {
-            commentData,
-            commentBy
-        };
-        var check = window.localStorage.getItem("isLoggedIn");
-        if(check==="true") {
-        axios
-            .post(`http://localhost:3000/users/posts/${this.state.id}/comments`, comment)
-            .then((res) => {
-                console.log('comment created', res)
-                let obj = {}
-                obj.commentBy= window.localStorage.getItem("userName")
-                obj.commentData= res.data.commentData
-                obj.createdAt= res.data.createdAt
-                this.setState({
-                    ...this.state,
-                    data: [...this.state.data, obj]
-                    
-                }) 
-            }) 
-            .catch((e) => {
-                alert(e)
-            });
-
-            form.reset();
-
-        } else {
-            alert('please sign in first');
+    handleSubmit(event) {
+        // event.preventDefault();
+         var c = this.props.match.params.ID
+         console.log(c)
+         alert(c)
+         var req = {
+            postID: c,
+            commentdata: this.state.commentdata,
+            commentedby: "..."
         }
-    };
-
+        var u="http://localhost:3000/users/posts/" +c.toString() + "/comments";
+        axios.post(u,req).then((response) => {
+                alert("..");
+                console.log(response.data);
+            }).catch((e) => {
+                alert("..");
+            })
+            this.setState({})
+        alert("............")
+    }
 
     componentWillMount() {
         this.fetch();
     }
 
     fetch() {
-        var url = `http://localhost:3000/users/posts/${this.state.id.toString()}/comments`;
+        var c = this.props.match.params.ID
+        console.log(c)
+        var url = "http://localhost:3000/users/posts/" +c.toString() + "/comments";
+
+        // alert(url)
 
         axios.get(url)
             .then((response) => {
-                console.log(response)
+                console.log("bhbhb",response)
                 this.setState({
                     data: response.data.data
                 });
+                console.log('pris', this.state.data[0])
             }).catch((e) => {
                 alert(e)
             });
-    }
+    } 
 
     render() {
-        console.log(this.state,"nnnnnnnnnnn")
-      //  var allposts =(comment => <Comment key={this.state.id} comment={comment} />)
-      var allposts = this.state.data.map(comment => <Comment key={comment.postid} comment={comment} />);
-        return ( 
+        
+        // console.log('priyy',this.state.data[0].id)
+        // const { redirect } = this.state;
+        // if (redirect) {
+        //     return <Redirect to={{ pathname: '/', state: { p: this.state.id } }} />
+            //return <Redirect to={{pathname: '/comment',state:{p:this.state.data[0].id}}}/>
+        //}
+
+        var allposts = this.state.data.map(comment => <Comment key={comment.postid} comment={comment} />);
+        return (
             <div className="dcontainer">
                <HeaderComponent></HeaderComponent>
                 <div className="dline1">
@@ -96,7 +91,7 @@ class DataComponent extends Component {
                 <form onSubmit={this.handleSubmit} method="post">
 
                     <div className="dline2">
-                        <textarea type="text" className="textbox" name="commentData" onChange={this.handleCommentdataChange} type="text" id="mytext" rows="6" cols="55" placeholder="&#128172; Write a response" />
+                        <textarea type="text" className="textbox" onChange={this.handleCommentdataChange} type="text" id="mytext" rows="6" cols="55" placeholder="&#128172; Write a response" />
 
                     </div>
                     <input className="submitreplycom" id="submitreplycom" type="submit" value="Publish Comment" />
@@ -158,12 +153,10 @@ class Comment extends Component {
     }
 
     render() {
-        //console.log(this.props.comment)
         var Date = this.props.comment.createdAt
         Date = Date.slice(0, 10)
         return (
             <div className="d1container">
-                
                 <div className="dcard2">
                     <div className="dprofile">
                         <div className="img">
@@ -171,13 +164,13 @@ class Comment extends Component {
                         </div>
                         &nbsp;
                     <div className="dpname" id="post1">
-                            <p><span className="dhigh">{this.props.comment.commentBy}</span></p>
+                            <p><span className="dhigh">Dave Feldman</span></p>
                             {/* {allposts} */}
                             <p>{Date}</p>
                         </div>
                     </div>
                     <div className="dmsg">
-                        <h3>{this.props.comment.commentData}</h3>
+                        <h3>{this.props.comment.commentdata}</h3>
                     </div>
                     <div className="dreply">
                         <div className="dclaps">

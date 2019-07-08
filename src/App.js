@@ -21,13 +21,14 @@ class App extends Component {
       <Router>
         <div>
           {/* <HomeComponent></HomeComponent> */}
-          <Switch>
+          <Switch> 
           <Route exact path='/' component={HomeComponent}></Route>
           {/* <Route exact path='/tag' component={HomeComponent}></Route> */}
           <Route exact path='/login' component={LoginComponent}></Route>
           <Route exact path='/signup' component={SignupComponent}></Route>
           <Route exact path='/post' component={PostComponent}></Route>
           <Route exact path='/comment' render={(p) => <DataComponent post={p} />}/>
+          {/* <Route exact path='/comment/:ID' component={DataComponent}></Route> */}
           <Route exact path='/singlepage'
             render={(p) => <PageComponent post={p} />}/>  
           </Switch>

@@ -5,6 +5,8 @@ import {
     BrowserRouter as Router,
     Link
   } from 'react-router-dom';
+import HeaderComponent from './HeaderComponent';
+import images from './images/david.jpeg';
 class PageComponent extends Component {
 
     constructor(props) {
@@ -16,7 +18,10 @@ class PageComponent extends Component {
                 titleDescription: "...",
                 authorName: "...",
                 postDescription: "...",
-                createdAt: "..."
+                createdAt: "...",
+                user: {
+                    email: "..."
+                }
             }]
         }
     } 
@@ -47,7 +52,10 @@ class PageComponent extends Component {
 
 
 
+
     render() {
+        //console.log(this.state.data[0].user.email)
+        //var ID = this.props.post.location.state.p;
         var publishdate = this.state.data[0].createdAt;
         publishdate = publishdate.slice(0, 10); 
         // console.log(this.props.post.location.state.p)
@@ -57,11 +65,12 @@ class PageComponent extends Component {
             <div className="pcontainer">
                 <div className="pfirst">
                     <div className="pleftside">
-                    <div className="picon" style={{fontSize: '270%'}}>
+                        <HeaderComponent></HeaderComponent>
+                    {/* <div className="picon" style={{fontSize: '270%'}}>
                         <Link to='/'>
                             <img src={require('./images/learnhigh.jpeg')} className="img1" alt="avatar" />
-                        </Link>
-                        </div>            
+                        </Link> 
+                        </div>             */}
                         <div className="pname">
                             <h1>{this.state.data[0].tag}</h1>
                         </div>
@@ -78,14 +87,15 @@ class PageComponent extends Component {
                             {this.state.data[0].titleDescription}
                         </div> <br></br>
                         <div className="profilepage"> 
-                             <img src={require('./images/david.jpeg')} className="pimagestyle" alt="avatar" />
+                             {/* <img src={require('./images/david.jpeg')} className="pimagestyle" alt={require('./images/david.jpeg')} /> */}
+                             <img src={this.state.data[0].user.image} className="pimagestyle" onError={ () => this.data[0].user.image='images/david.jpeg'} />
                             <div className="pagename" id="post1">
                             <div className="ppname" id="post1">
                             <Link className="nav-link" to={{pathname:'/comment', state: {p:this.state.data[0].id}}}>
-                                 <h3>{this.state.data[0].authorName}</h3>
+                                 <h3>{this.state.data[0].user.userName}</h3>
                             </Link>
                             </div>
-                            <p>{publishdate} . {this.state.data[0].readTime}</p>
+                            <p>{publishdate} . {this.state.data[0].readTime} min read</p>
                             </div>
                         </div>
                     
@@ -97,9 +107,10 @@ class PageComponent extends Component {
                 </div>
                 <div className="viewRes">
                 <Link className="nav-link" to={{pathname:'/comment', state: {p:this.state.data[0].id}}}>
+                {/* <Link className="nav-link" to={`/comment/${ID}`}> */}
                     <input className="submitreply" id="submitreply" type="submit" value="show the responses" />
                 </Link>
-                </div>
+                </div> 
             </div>
         );
     }

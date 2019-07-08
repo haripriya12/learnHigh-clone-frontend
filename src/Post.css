@@ -6,11 +6,12 @@ body{
     background: #fff;
 }
 .postcontainer {
-    margin: 8% 7% 8% 7%;
+    margin: 3% 11% 8% 11%;
 }
 .postline1{ 
-    padding-left: 18%;
-    padding-right: 18%;
+    padding-top: 5% 10% 4% 5%;
+    /* padding-left: 18%;
+    padding-right: 18%; */
     display: flex;
     align-items: center; 
     flex-wrap: wrap;
@@ -37,7 +38,7 @@ body{
     text-decoration: none;
 }
 .postcontainer2{
-    padding: 5% 13% 5% 13%;
+    padding: 2% 13% 5% 13%;
 }
 textarea[typep=text], select {
     width: 100%;

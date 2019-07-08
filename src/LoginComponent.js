@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Login.css';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 import {
     BrowserRouter as Router,
     Route,
@@ -12,11 +13,54 @@ import {
     constructor() {
         super();
         this.state = {
+            redirect: false,
+            data: [{
+                email: '',
+                password: ''    
+            }]
 
         }
     }
 
+    handleCommentdataChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value,
+        });
+    };
+
+
+    handleSubmit = e =>{
+        e.preventDefault();
+        const { email, password } = this.state; 
+        const post = {
+            email,
+            password
+        }; 
+
+        axios
+            .post('http://localhost:3000/users/signin',post)
+            .then((res) => {
+                console.log('comment created', res.data)
+                if(res.data.length == 0) {
+                    alert('Enter correct email and passsword');
+                    window.localStorage.setItem("isLoggedIn",false)
+                } else {
+                    this.setState({redirect: true})
+                    window.localStorage.setItem("isLoggedIn",true)
+                    window.localStorage.setItem("userName",res.data[0].userName)
+                    window.localStorage.setItem("userid",res.data[0].id)
+                    window.localStorage.setItem("image",res.data[0].image)
+                }
+            });
+    }
+
+
       render() {
+        const { redirect } = this.state;
+        if (redirect) {
+            return <Redirect to={{ pathname: '/'}} />
+          //  return <Redirect to={{pathname: '/comment',state:{p:this.state.data[0].id}}}/>
+        }
         return(
             <div className="lcontainer"> 
         <div className="logcontainer3">
@@ -28,12 +72,12 @@ import {
             </div>
             <div className="mail">
                 <p>Your email</p>
-                <form action={`http://localhost:3000/users/signin`} method="post">
+                <form onSubmit={this.handleSubmit} method="post">
                 <p>
-                <input type="logintext" id="email" name="email" pattern=".+@gmail.com" required placeholder="sign in with your email" />
+                <input type="logintext" id="email" onChange={this.handleCommentdataChange} name="email" pattern=".+@gmail.com" required placeholder="sign in with your email" />
                 </p>
                 <p>
-                <input type="logintext" id="password" name="password" minLength="4" maxLength="8" required placeholder="enter password" />
+                <input type="logintext" id="password" onChange={this.handleCommentdataChange} name="password" minLength="4" maxLength="8" required placeholder="enter password" />
                 </p>
                 <p>
                     {/* <Link className="nav-link" to="/"> */}

@@ -10,6 +10,7 @@ import {
   import LoginComponent from './LoginComponent';
   import DataComponent from './DataComponent';
   import PageComponent from './PageComponent';
+import HeaderComponent from './HeaderComponent';
 
  class HomeComponent extends Component {
 
@@ -41,7 +42,7 @@ import {
     
     axios.get(url)
           .then((response) => {
-            // console.log(response)
+            console.log(response)
             this.setState({
               data: response.data.data           
             });  
@@ -59,7 +60,7 @@ import {
         return(
         <div className="container">
         <div className="container1">
-        <div className="Hmain-container">
+        {/* <div className="Hmain-container">
           <div className="det1">
             <div className="img1">
               <img src={require('./images/learnhigh.jpeg')} style={{color: 'black'}} alt="avatar" />
@@ -86,7 +87,8 @@ import {
           </div>
              
             
-        </div>  
+        </div>   */}
+        <HeaderComponent></HeaderComponent>
         <div className="tags">
             <Link to="/">
             <a style={{color: 'black'}} onClick={()=>this.fetch()}>HOME</a>
@@ -153,6 +155,8 @@ import {
       } 
 
       render() {
+        // console.log(this.props.post.user.userName)
+        //console.log(this.props.post.user)
         console.log('harr',this.props.post.id)
         var Date = this.props.post.createdAt
         Date = Date.slice(0,10)
@@ -173,8 +177,8 @@ import {
                 <div className="new">
                 <div className="pub">
                   <div className="auth">
-                    <p>{this.props.post.authorName}</p>
-                    <p>{Date}  .  {this.props.post.readTime} &#9733;</p>
+                    <p>{this.props.post.user.userName} in {this.props.post.subDomain}</p>
+                    <p>{Date}  .  {this.props.post.readTime} min read &#9733;</p>
                 </div>
                 </div>
                 <div className="resp">                    
