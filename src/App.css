@@ -37,11 +37,12 @@
   .mem{
       justify-content: space-around; 
       font-family: sans-serif,Arial;
-      font-size: 17px;
+      font-size: 19px;
       height: 30px;
+      font-weight: bold;
   }
   .mem>a{
-      color:  rgb(48, 51, 48);
+      color:  rgb(16, 17, 16);
       text-decoration: none;
   }
   .login-form{

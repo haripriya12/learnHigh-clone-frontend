@@ -15,29 +15,36 @@ import {
   // import SignoutComponent from './SignoutComponent';
  class HeaderComponent extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      data: []
       };
     }
 
     handleSignin = () => {
       document.getElementById('Signin').innerHTML = "signin"
       window.localStorage.setItem("isLoggedIn","false")
+      localStorage.clear()
+     
       
       // window.localStorage.setItem("userName","Null")
       // window.localStorage.setItem("userid","Null")
     }
 
     componentDidMount() {
-      //this.fetch();
+     // this.fetch();
       var userName = window.localStorage.getItem("isLoggedIn");
-      if(userName === "true" ) {
+      if(userName === "true" || userName !== null ) {
         document.getElementById('Signin').innerHTML = "Sign out"
+        document.getElementById("welcome").innerHTML= "Welcome"+ " "+ window.localStorage.getItem("userName");
       } else {
         document.getElementById('Signin').innerHTML = "Sign in"
+        document.getElementById("welcome").style.display="none"
       }
+     
     }
+
 
         
     
@@ -58,7 +65,7 @@ import {
           <div className="det">
               
             <div className="mem">
-                <a href="#">Become a Member</a> 
+                <a id="welcome">Become a Member</a> 
             </div> &nbsp;&nbsp;&nbsp;
             <div className="login-form">
             <Link className="nav-link" to='/login'>
