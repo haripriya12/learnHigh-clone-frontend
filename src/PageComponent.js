@@ -31,7 +31,7 @@ class PageComponent extends Component {
     }
 
     fetch() {
-        var url = "http://localhost:3000/users/posts/" + this.state.id.toString();
+        var url = "https://medium.learnhigh.ml/users/posts/" + this.state.id.toString();
 
         // alert(url)
 
@@ -88,7 +88,7 @@ class PageComponent extends Component {
                         </div> <br></br>
                         <div className="profilepage"> 
                              {/* <img src={require('./images/david.jpeg')} className="pimagestyle" alt={require('./images/david.jpeg')} /> */}
-                             <img src={this.state.data[0].user.image} className="pimagestyle" onError={ () => this.data[0].user.image='images/david.jpeg'} />
+                             <img src={this.state.data[0].user.image} className="pimagestyle" />
                             <div className="pagename" id="post1">
                             <div className="ppname" id="post1">
                             <Link className="nav-link" to={{pathname:'/comment', state: {p:this.state.data[0].id}}}>

@@ -43,7 +43,7 @@ class DataComponent extends Component {
         var check = window.localStorage.getItem("isLoggedIn");
         if(check==="true") {
         axios
-            .post(`http://localhost:3000/users/posts/${this.state.id}/comments`, comment)
+            .post(`https://medium.learnhigh.ml/users/posts/${this.state.id}/comments`, comment)
             .then((res) => {
                 let obj = {}
                 obj.user = {}
@@ -72,7 +72,7 @@ class DataComponent extends Component {
     }
 
     fetch() {
-        var url = `http://localhost:3000/users/posts/${this.state.id.toString()}/comments`;
+        var url = `https://medium.learnhigh.ml/users/posts/${this.state.id.toString()}/comments`;
 
         axios.get(url)
             .then((response) => {

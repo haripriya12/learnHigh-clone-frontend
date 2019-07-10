@@ -16,6 +16,21 @@ import SignupComponent from './SignupComponent';
 
 
 class App extends Component {
+
+  componentDidMount() {
+    // this.fetch();
+     var userName = window.localStorage.getItem("isLoggedIn");
+     if(userName === "true" || userName !== null ) {
+       document.getElementById('Signin').innerHTML = "Sign out"
+       document.getElementById("welcome").innerHTML= "Welcome"+ " "+ window.localStorage.getItem("userName");
+     } else {
+       document.getElementById('Signin').innerHTML = "Sign in"
+       document.getElementById("welcome").style.display="none"
+     }
+    
+   }
+
+
   render() {
     return (
       <Router>

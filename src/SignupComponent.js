@@ -42,7 +42,7 @@ import {
         }; 
 
         axios
-            .post('http://localhost:3000/users/signup',post)
+            .post('https://medium.learnhigh.ml/users/signup',post)
             .then((res) => {
                 console.log('comment created', res)
                 let obj = {}

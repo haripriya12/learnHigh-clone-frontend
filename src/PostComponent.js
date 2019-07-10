@@ -51,7 +51,7 @@ import HeaderComponent from './HeaderComponent';
         var check = window.localStorage.getItem("isLoggedIn");
         if(check === "true" ) {
         axios
-            .post('http://localhost:3000/users/post',post)
+            .post('https://medium.learnhigh.ml/users/post',post)
             .then( ()=> this.setState({redirect: true}));
             
             // .then((res) => {

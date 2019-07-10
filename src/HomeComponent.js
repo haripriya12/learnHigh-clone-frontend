@@ -23,6 +23,7 @@ import HeaderComponent from './HeaderComponent';
     
   componentDidMount() {
     this.fetch();
+   
   }
   
   fetch(tag) {
@@ -31,10 +32,11 @@ import HeaderComponent from './HeaderComponent';
     console.log("locations params", this.props.location.search)
     if(tag){
      // var url = `http://localhost:3000/users/posts?tag=${tag}`;
-     var url = `http://localhost:3000/users/posts/tag/${tag}`;
+     var url = `https://medium.learnhigh.ml/users/posts/tag/${tag}`;
     } else {
       console.log("fetching all")
-    var url = "http://localhost:3000/users/posts";
+    // var url = "http://localhost:3000/users/posts";
+    var url = "https://medium.learnhigh.ml/users/posts";
      }
 
     // alert(url)
